@@ -1,0 +1,15 @@
+{% extends "tasktodo/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="center-column" >
+    <h1 style="color: rgb(35, 100, 100); text-align: center; ">update task</h1>
+    <form method="POST" action="" >
+    {% csrf_token %}
+           {{form.title}}
+    <a class=" btn btn-danger btn-lg " href="{% url 'list' %} ">Cancel</a>
+
+    <input class="btn btn-success btn-lg"  type="submit" name="update task" value="update task" >
+    </form>
+</div>
+{% endblock %}

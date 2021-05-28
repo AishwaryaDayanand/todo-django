@@ -1,0 +1,18 @@
+{% extends 'tasktodo/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="center-column" >
+    <h1 style="color: rgb(35, 100, 100); text-align: center; ">Are you sure to Delete "{{item}}" ? </h1>
+    <div class="confirm-cancel" >
+
+        <a class=" btn btn-danger " href="{% url 'list' %} ">Cancel</a>
+        <form method="POST" action="">                              
+            {% csrf_token %}
+            <input value="Delete" class="btn btn-success btn-lg  " type="Submit" name="confirm">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
